@@ -55,6 +55,7 @@ public class IU_ganado extends JDialog {
 	 * Create the dialog.
 	 */
 	public IU_ganado() {
+		setResizable(false);
 		setBounds(100, 100, 514, 407);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));

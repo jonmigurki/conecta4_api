@@ -97,7 +97,7 @@ public class IU_juego extends JFrame implements Observer{
 	 * Create the frame.
 	 */
 	public IU_juego() {
-		
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 490, 390);
 		contentPane = new JPanel();

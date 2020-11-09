@@ -42,6 +42,7 @@ public class IU_2jugadores extends JDialog {
 	 * Create the dialog.
 	 */
 	public IU_2jugadores() {
+		setResizable(false);
 		setBounds(100, 100, 353, 264);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));

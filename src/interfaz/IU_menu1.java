@@ -72,6 +72,7 @@ public class IU_menu1 extends JFrame {
 	 * Create the frame.
 	 */
 	public IU_menu1() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 340);
 		contentPane = new JPanel();
