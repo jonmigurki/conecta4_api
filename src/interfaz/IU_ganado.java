@@ -3,6 +3,7 @@ package interfaz;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
@@ -23,6 +24,7 @@ import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.SystemColor;
 
 import javax.swing.SwingConstants;
@@ -55,6 +57,9 @@ public class IU_ganado extends JDialog {
 	 * Create the dialog.
 	 */
 	public IU_ganado() {
+		Image icono = new ImageIcon("icono.png").getImage();
+		setIconImage(icono);
+		setTitle("CONECTA 4");
 		setResizable(false);
 		setBounds(100, 100, 514, 407);
 		getContentPane().setLayout(new BorderLayout());

@@ -3,7 +3,9 @@ package interfaz;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.Image;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
@@ -42,6 +44,9 @@ public class IU_2jugadores extends JDialog {
 	 * Create the dialog.
 	 */
 	public IU_2jugadores() {
+		Image icono = new ImageIcon("icono.png").getImage();
+		setIconImage(icono);
+		setTitle("CONECTA 4");
 		setResizable(false);
 		setBounds(100, 100, 353, 264);
 		getContentPane().setLayout(new BorderLayout());

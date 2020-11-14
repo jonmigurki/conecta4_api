@@ -14,9 +14,11 @@ import codigo.Jugador;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class IU_1jugador extends JFrame {
@@ -50,6 +52,9 @@ public class IU_1jugador extends JFrame {
 	 * Create the frame.
 	 */
 	public IU_1jugador() {
+		Image icono = new ImageIcon("icono.png").getImage();
+		setIconImage(icono);
+		setTitle("CONECTA 4");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 384, 255);

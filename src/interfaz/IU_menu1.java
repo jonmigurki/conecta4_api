@@ -71,7 +71,11 @@ public class IU_menu1 extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	
 	public IU_menu1() {
+		Image icono = new ImageIcon("icono.png").getImage();
+		setIconImage(icono);
+		setTitle("CONECTA 4");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 340);
@@ -107,7 +111,7 @@ public class IU_menu1 extends JFrame {
 
 			btnAyuda.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					setVisible(false);
+					//setVisible(false);
 					IU_ayuda ayuda = new IU_ayuda();
 					ayuda.setVisible(true);
 				}

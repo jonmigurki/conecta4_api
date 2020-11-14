@@ -11,9 +11,12 @@ import codigo.Conecta4;
 
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -47,6 +50,9 @@ public class IU_ayuda extends JFrame {
 	 * Create the frame.
 	 */
 	public IU_ayuda() {
+		Image icono = new ImageIcon("icono.png").getImage();
+		setIconImage(icono);
+		setTitle("Ayuda");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 546, 424);
@@ -122,8 +128,8 @@ public class IU_ayuda extends JFrame {
 			rdbtnAtras.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					setVisible(false);
-					IU_menu1 menu = new IU_menu1();
-					menu.setVisible(true);
+					//IU_menu1 menu = new IU_menu1();
+					//menu.setVisible(true);
 				}
 			});
 			rdbtnAtras.setBounds(403, 339, 97, 25);

@@ -66,6 +66,9 @@ public class IU_ganado2 extends JDialog {
 	 * Create the dialog.
 	 */
 	public IU_ganado2() {
+		Image icono = new ImageIcon("icono.png").getImage();
+		setIconImage(icono);
+		setTitle("CONECTA 4");
 		setResizable(false);
 		setBounds(100, 100, 514, 407);
 		getContentPane().setLayout(new BorderLayout());
