@@ -11,3 +11,4 @@ JOO --> 45
 ALBA --> 47
 AA --> 47
 Maquina --> 46
+AAA --> 47

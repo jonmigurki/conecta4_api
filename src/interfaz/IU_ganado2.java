@@ -7,12 +7,14 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
+import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 
 import codigo.Conecta4;
-
+import codigo.EnumTipo;
+import codigo.Jugador;
 
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -30,6 +32,7 @@ import java.awt.SystemColor;
 
 import javax.swing.SwingConstants;
 import javax.swing.ScrollPaneConstants;
+import java.awt.Color;
 
 public class IU_ganado2 extends JDialog {
 
@@ -41,6 +44,8 @@ public class IU_ganado2 extends JDialog {
 	
 	//private Image imagen = new ImageIcon("fuegos.gif").getImage();
 	private Image imagen = new ImageIcon("euskera.png").getImage();
+	private JLabel lblFuegos;
+	private JLabel lblTrofeo;
 	
 	
 	
@@ -57,6 +62,7 @@ public class IU_ganado2 extends JDialog {
 			IU_ganado2 dialog = new IU_ganado2();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -77,7 +83,13 @@ public class IU_ganado2 extends JDialog {
 		contentPanel.setLayout(null);
 		contentPanel.add(getLblHaGanado());
 		contentPanel.add(getLblGanador());
-		contentPanel.add(getLbl());
+		contentPanel.add(getLblTrofeo());
+		contentPanel.add(getLblFuegos());
+		
+		
+		
+		
+		//contentPanel.add(getLbl());
 	//	contentPanel.add(getScrollPane());
 		//scroll = new JScrollPane(area);
 		
@@ -87,6 +99,8 @@ public class IU_ganado2 extends JDialog {
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
+			
+			
 			{
 				if(Conecta4.getConecta4().getIdioma().equals("Castellano")){
 					JLabel texto = new JLabel("¿Quieres jugar otra partida?                       ");
@@ -100,10 +114,35 @@ public class IU_ganado2 extends JDialog {
 				JButton okButton = new JButton("V");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
+						//Jugar otra partida con los mismos jugadores
+						
+						
 						Conecta4.getConecta4().setFin(true);
-						IU_menu1 menu = new IU_menu1();
+						
+						/*IU_menu1 menu = new IU_menu1();
 						menu.setVisible(true);
+						setVisible(false);*/
+						
+						String j1 = Conecta4.getConecta4().getTablero().getJugador1().nombre;
+						String j2 = Conecta4.getConecta4().getTablero().getJugador2().nombre;
+						
+						Jugador jugador1 = new Jugador(EnumTipo.USUARIO, j1, 1);
+						Jugador jugador2 = new Jugador(EnumTipo.USUARIO, j2, 2);
+						
+						Conecta4.getConecta4().empezarPartida();
+						Conecta4.getConecta4().getTablero().setJugadores(jugador1, jugador2);
+						Conecta4.getConecta4().getTablero().generarTablero();
+						Conecta4.getConecta4().getTablero().iniciarPartida();
+						
+						IU_juego juego = new IU_juego();
+						juego.setModo("USUARIO");
+						
+
 						setVisible(false);
+						juego.setVisible(true);
+						
+						
+						
 					}
 				});
 				
@@ -116,6 +155,8 @@ public class IU_ganado2 extends JDialog {
 				cancelButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						dispose();
+						IU_menu1 menu = new IU_menu1();
+						menu.setVisible(true);
 					}
 				});
 				cancelButton.setActionCommand("Cancel");
@@ -132,42 +173,49 @@ public class IU_ganado2 extends JDialog {
 				lblHaGanado = new JLabel("IRABAZI DU");
 			}			
 			lblHaGanado.setHorizontalAlignment(SwingConstants.CENTER);
-			lblHaGanado.setFont(new Font("Tahoma", Font.BOLD, 20));
-			lblHaGanado.setBounds(12, 32, 472, 36);
+			lblHaGanado.setFont(new Font("Tahoma", Font.BOLD, 40));
+			lblHaGanado.setBounds(12, -10, 472, 80);
+			lblHaGanado.setForeground(Color.BLACK);
 		}
 		return lblHaGanado;
 	}
 	private JLabel getLblGanador() {
 		if (lblGanador == null) {
 			lblGanador = new JLabel(Conecta4.getConecta4().getTablero().getGanador().getNombre());
-			if(Conecta4.getConecta4().getTablero().getGanador().getNum()==1){
+			//lblGanador.setForeground(Color.YELLOW);
+			//lblGanador.setBackground(Color.GRAY);
+		/*	if(Conecta4.getConecta4().getTablero().getGanador().getNum()==1){
 				lblGanador.setForeground(SystemColor.RED);
 			}else{
 				lblGanador.setForeground(SystemColor.BLUE);
-			}
+			}*/
+			lblGanador.setForeground(Color.BLACK);
 			lblGanador.setHorizontalAlignment(SwingConstants.CENTER);
-			lblGanador.setFont(new Font("Hobo Std", Font.PLAIN, 30));
-			lblGanador.setBounds(12, 59, 472, 71);
+			lblGanador.setFont(new Font("Hobo Std", Font.PLAIN, 25));
+			lblGanador.setBounds(15, 125, 472, 120);
 		}
 		return lblGanador;
 	}
-	
-	
-
-	private JButton getLbl() {
-		if (gif == null) {
-			gif = new JButton("");
-			gif.setBounds(85, 123, 260, 74);
+	private JLabel getLblFuegos() {
+		if (lblFuegos == null) {
+			lblFuegos = new JLabel("");
+			lblFuegos.setBounds(0, 0, 550, 400);
 			
-			ImageIcon gif2 = new ImageIcon(imagen.getScaledInstance(50, 50, Image.SCALE_SMOOTH));
-
-			gif.setIcon(gif2);
+			ImageIcon iconGif = new ImageIcon("fuegos.gif");
+			lblFuegos.setIcon(iconGif);
 		}
-		return gif;
+		return lblFuegos;
 	}
-	
-/*	
-	public void paint(Graphics g){
-		g.drawImage(imagen, 110, 99, 140, 57, this);
-	}*/
+	private JLabel getLblTrofeo() {
+		if (lblTrofeo == null) {
+			lblTrofeo = new JLabel("");
+			lblTrofeo.setBounds(170, 135, 190, 168);
+			
+			Image trofeo = new ImageIcon("trofeo.png").getImage();
+			ImageIcon iconTrofeo = new ImageIcon(trofeo.getScaledInstance(170, 170, Image.SCALE_SMOOTH));
+			
+			lblTrofeo.setIcon(iconTrofeo);
+		}
+		return lblTrofeo;
+	}
 }
