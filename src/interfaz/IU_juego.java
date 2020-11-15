@@ -16,6 +16,7 @@ import javax.swing.border.EmptyBorder;
 
 import codigo.Conecta4;
 import codigo.Jugador;
+import codigo.Musica;
 import codigo.Tablero;
 
 import java.awt.GridLayout;
@@ -29,11 +30,14 @@ import java.awt.event.MouseListener;
 import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.concurrent.TimeUnit;
 
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JLabel;
+
+import codigo.Musica;
 
 public class IU_juego extends JFrame implements Observer{
 
@@ -55,6 +59,8 @@ public class IU_juego extends JFrame implements Observer{
 	private final JLabel lblTurnoDe = new JLabel("Turno de:");
 	private final JLabel lblTxanda = new JLabel("ren txanda");
 	private final JLabel lblJugador = new JLabel();
+	
+	private Musica musica;
 	
 	
 	private String modo = "";
@@ -112,6 +118,8 @@ public class IU_juego extends JFrame implements Observer{
 		contentPane.setLayout(new BorderLayout(0, 0));
 		
 		contentPane.add(panelnorte, BorderLayout.NORTH);
+		musica = null;
+
 		
 		if(Conecta4.getConecta4().getIdioma().equals("Castellano")){
 			panelnorte.add(lblTurnoDe);
@@ -120,6 +128,8 @@ public class IU_juego extends JFrame implements Observer{
 			lblJugador.setForeground(Color.RED);
 			panelnorte.add(lblJugador);
 			contentPane.add(getPanelCentro(), BorderLayout.CENTER);
+			musica = null;
+
 		}else{
 			lblJugador.setFont(new Font("Tahoma", Font.BOLD, 14));
 			lblJugador.setText(Conecta4.getConecta4().getTablero().getJugador1().getNombre());
@@ -127,6 +137,8 @@ public class IU_juego extends JFrame implements Observer{
 			panelnorte.add(lblJugador);
 			panelnorte.add(lblTxanda);
 			contentPane.add(getPanelCentro(), BorderLayout.CENTER);
+			musica = null;
+
 		}
 		
 		
@@ -259,6 +271,15 @@ public class IU_juego extends JFrame implements Observer{
 											lblJugador.setText(turnoActual.getNombre());
 											Conecta4.getConecta4().getTablero().comprobarVictoria();
 											if(Conecta4.getConecta4().getTablero().hayGanador()){
+												musica.stopMusica2();
+												musica.playMusica();
+												try {
+													TimeUnit.SECONDS.sleep(5);
+												} catch (InterruptedException e1) {
+													// TODO Auto-generated catch block
+													e1.printStackTrace();
+												}
+												musica.playMusica2();
 												Jugador ganador = Conecta4.getConecta4().getTablero().getGanador();
 											//	System.out.println("Ha ganado " + ganador.getNombre());
 												fin = true;
@@ -321,6 +342,15 @@ public class IU_juego extends JFrame implements Observer{
 											lblJugador.setText(Conecta4.getConecta4().getTablero().getJugador1().getNombre());
 											Conecta4.getConecta4().getTablero().comprobarVictoria();
 											if(Conecta4.getConecta4().getTablero().hayGanador() && !fin){
+												musica.stopMusica2();
+												musica.playMusica();
+												try {
+													TimeUnit.SECONDS.sleep(5);
+												} catch (InterruptedException e1) {
+													// TODO Auto-generated catch block
+													e1.printStackTrace();
+												}
+												musica.playMusica2();
 												Jugador ganador = Conecta4.getConecta4().getTablero().getGanador();
 												//System.out.println("Ha ganado " + ganador.getNombre());
 												fin = true;
@@ -359,6 +389,15 @@ public class IU_juego extends JFrame implements Observer{
 
 									Conecta4.getConecta4().getTablero().comprobarVictoria();
 									if(Conecta4.getConecta4().getTablero().hayGanador() && !fin){
+										musica.stopMusica2();
+										musica.playMusica();
+										try {
+											TimeUnit.SECONDS.sleep(5);
+										} catch (InterruptedException e1) {
+											// TODO Auto-generated catch block
+											e1.printStackTrace();
+										}
+										musica.playMusica2();
 										Jugador ganador = Conecta4.getConecta4().getTablero().getGanador();
 									//	System.out.println("Ha ganado " + ganador.getNombre());
 										fin = true;
@@ -416,6 +455,15 @@ public class IU_juego extends JFrame implements Observer{
 											lblJugador.setText(Conecta4.getConecta4().getTablero().getJugador1().getNombre());
 											Conecta4.getConecta4().getTablero().comprobarVictoria();
 											if(Conecta4.getConecta4().getTablero().hayGanador()){
+												musica.stopMusica2();
+												musica.playMusica();
+												try {
+													TimeUnit.SECONDS.sleep(5);
+												} catch (InterruptedException e1) {
+													// TODO Auto-generated catch block
+													e1.printStackTrace();
+												}
+												musica.playMusica2();
 												Jugador ganador = Conecta4.getConecta4().getTablero().getGanador();
 												//System.out.println("Ha ganado " + ganador.getNombre());
 												fin = true;
@@ -455,6 +503,15 @@ public class IU_juego extends JFrame implements Observer{
 
 									Conecta4.getConecta4().getTablero().comprobarVictoria();
 									if(Conecta4.getConecta4().getTablero().hayGanador()){
+										musica.stopMusica2();
+										musica.playMusica();
+										try {
+											TimeUnit.SECONDS.sleep(5);
+										} catch (InterruptedException e1) {
+											// TODO Auto-generated catch block
+											e1.printStackTrace();
+										}
+										musica.playMusica2();
 										Jugador ganador = Conecta4.getConecta4().getTablero().getGanador();
 										//System.out.println("Ha ganado " + ganador.getNombre());
 										fin = true;

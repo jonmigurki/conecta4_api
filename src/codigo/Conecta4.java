@@ -45,6 +45,7 @@ public class Conecta4{
 		
 		unTablero = DirectorTablero.getDirectorTablero().generarTablero();
 		
+		
 	}
 	
 }

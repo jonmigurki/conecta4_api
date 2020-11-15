@@ -28,6 +28,7 @@ import javax.swing.SwingConstants;
 import javax.swing.JRadioButton;
 import javax.swing.JSeparator;
 import java.awt.SystemColor;
+import codigo.Musica;
 
 public class IU_menu1 extends JFrame {
 
@@ -49,7 +50,9 @@ public class IU_menu1 extends JFrame {
 	private JLabel lblDebesSeleccionarUn;
 	private JLabel lblFondo;
 	private JLabel lblJugar;
+	private static Musica musica;
 
+	
 	/**
 	 * Launch the application.
 	 */
@@ -85,6 +88,8 @@ public class IU_menu1 extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		contentPane.add(getPanelsur(), BorderLayout.SOUTH);
 		contentPane.add(getPanelcentral(), BorderLayout.CENTER);
+		musica = null;
+		musica.playMusica2();
 		
 		
 	}
