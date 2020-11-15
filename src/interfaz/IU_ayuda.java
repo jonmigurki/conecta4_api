@@ -128,8 +128,8 @@ public class IU_ayuda extends JFrame {
 			rdbtnAtras.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					setVisible(false);
-					//IU_menu1 menu = new IU_menu1();
-					//menu.setVisible(true);
+					IU_menu1 menu = new IU_menu1();
+					menu.setVisible(true);
 				}
 			});
 			rdbtnAtras.setBounds(403, 339, 97, 25);

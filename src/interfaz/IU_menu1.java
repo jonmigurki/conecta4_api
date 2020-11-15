@@ -38,19 +38,17 @@ public class IU_menu1 extends JFrame {
 	
 	private String idioma = "Castellano";
 	private JPanel panelcentral;
-	private JPanel panel;
-	private JLabel titulo;
 	private JPanel panel_1;
 	private JLabel lblSeleccioneModoDe;
 	private JRadioButton rdbtn2Jugadores;
-	private JLabel lblJugadorVsOrdenador;
 	private JRadioButton rdbtnModoFacil;
 	private JRadioButton rdbtnModoDificil;
-	private JSeparator separator;
 	private JButton btnJugar;
 	private JButton btnAyuda;
 	private JLabel lblSeparador;
 	private JLabel lblDebesSeleccionarUn;
+	private JLabel lblFondo;
+	private JLabel lblJugar;
 
 	/**
 	 * Launch the application.
@@ -61,6 +59,7 @@ public class IU_menu1 extends JFrame {
 				try {
 					IU_menu1 frame = new IU_menu1();
 					frame.setVisible(true);
+					//frame.setBackground(Color.WHITE);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -78,9 +77,10 @@ public class IU_menu1 extends JFrame {
 		setTitle("CONECTA 4");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 600, 340);
+		setBounds(100, 100, 550, 550);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBackground(Color.WHITE);
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
 		contentPane.add(getPanelsur(), BorderLayout.SOUTH);
@@ -98,6 +98,7 @@ public class IU_menu1 extends JFrame {
 			panelsur.add(getLblSeparador());
 			panelsur.add(getCastellano());
 			panelsur.add(getEuskera());
+			panelsur.setBackground(Color.WHITE);
 		}
 		return panelsur;
 	}
@@ -111,7 +112,7 @@ public class IU_menu1 extends JFrame {
 
 			btnAyuda.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					//setVisible(false);
+					setVisible(false);
 					IU_ayuda ayuda = new IU_ayuda();
 					ayuda.setVisible(true);
 				}
@@ -151,12 +152,11 @@ public class IU_menu1 extends JFrame {
 					Conecta4.getConecta4().setIdioma("Euskera");
 					eus.setBackground(Color.YELLOW);
 					esp.setBackground(Color.WHITE);
-					titulo.setText("KONEKTATU 4");
 					lblSeleccioneModoDe.setText("Joko modu bat aukeratu:");
-					rdbtn2Jugadores.setText("2 Jokalari");
-					lblJugadorVsOrdenador.setText("Jokalaria VS Ordenagailua");
-					rdbtnModoFacil.setText("Modu erraza");
-					rdbtnModoDificil.setText("Modu zaila");
+					rdbtn2Jugadores.setText("Jokalaria VS Jokalaria");
+					rdbtnModoFacil.setText("Jokalaria VS Ordenagailu tentela");
+					rdbtnModoDificil.setText("Jokalaria VS Ordenagailu azkarra");
+					lblDebesSeleccionarUn.setText("Joko modu bat aukeratu behar duzu");
 				}
 			});
 			
@@ -194,12 +194,10 @@ public class IU_menu1 extends JFrame {
 					Conecta4.getConecta4().setIdioma("Castellano");
 					esp.setBackground(Color.YELLOW);
 					eus.setBackground(Color.WHITE);
-					titulo.setText("CONECTA 4");
 					lblSeleccioneModoDe.setText("Seleccione modo de juego:");
-					rdbtn2Jugadores.setText("2 Jugadores");
-					lblJugadorVsOrdenador.setText("Jugador VS Ordenador");
-					rdbtnModoFacil.setText("Modo fácil");
-					rdbtnModoDificil.setText("Modo difícil");
+					rdbtn2Jugadores.setText("Jugador VS Jugador");
+					rdbtnModoFacil.setText("Jugador VS Ordenador tonto");
+					rdbtnModoDificil.setText("Jugador VS Ordenador listo");
 
 				}
 			});
@@ -232,24 +230,9 @@ public class IU_menu1 extends JFrame {
 		if (panelcentral == null) {
 			panelcentral = new JPanel();
 			panelcentral.setLayout(new BorderLayout(0, 0));
-			panelcentral.add(getPanel_1(), BorderLayout.NORTH);
 			panelcentral.add(getPanel_1_1(), BorderLayout.CENTER);
 		}
 		return panelcentral;
-	}
-	private JPanel getPanel_1() {
-		if (panel == null) {
-			panel = new JPanel();
-			panel.add(getTitulo());
-		}
-		return panel;
-	}
-	private JLabel getTitulo() {
-		if (titulo == null) {
-			titulo = new JLabel("CONECTA 4");
-			titulo.setFont(new Font("Ink Free", Font.PLAIN, 38));
-		}
-		return titulo;
 	}
 	private JPanel getPanel_1_1() {
 		if (panel_1 == null) {
@@ -257,10 +240,8 @@ public class IU_menu1 extends JFrame {
 			panel_1.setLayout(null);
 			panel_1.add(getLblSeleccioneModoDe());
 			panel_1.add(getRdbtn2Jugadores());
-			panel_1.add(getLblJugadorVsOrdenador());
 			panel_1.add(getRdbtnModoFacil());
 			panel_1.add(getRdbtnModoDificil());
-			panel_1.add(getSeparator());
 			panel_1.add(getBtnJugar());
 			
 			ButtonGroup btngroup1 = new ButtonGroup();
@@ -268,6 +249,8 @@ public class IU_menu1 extends JFrame {
 			btngroup1.add(getRdbtnModoFacil());
 			btngroup1.add(getRdbtnModoDificil());
 			panel_1.add(getLblDebesSeleccionarUn());
+			panel_1.add(getLblJugar());
+			panel_1.add(getLblFondo());
 
 		}
 		return panel_1;
@@ -275,58 +258,47 @@ public class IU_menu1 extends JFrame {
 	private JLabel getLblSeleccioneModoDe() {
 		if (lblSeleccioneModoDe == null) {
 			lblSeleccioneModoDe = new JLabel("Seleccione modo de juego:");
-			lblSeleccioneModoDe.setFont(new Font("Tahoma", Font.PLAIN, 16));
+			lblSeleccioneModoDe.setFont(new Font("Arial", Font.PLAIN, 17));
 			lblSeleccioneModoDe.setHorizontalAlignment(SwingConstants.CENTER);
-			lblSeleccioneModoDe.setBounds(54, 13, 286, 28);
+			lblSeleccioneModoDe.setBounds(12, 180, 286, 28);
 		}
 		return lblSeleccioneModoDe;
 	}
 	private JRadioButton getRdbtn2Jugadores() {
 		if (rdbtn2Jugadores == null) {
-			rdbtn2Jugadores = new JRadioButton("2 Jugadores");
+			rdbtn2Jugadores = new JRadioButton("Jugador VS Jugador");
 			rdbtn2Jugadores.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			rdbtn2Jugadores.setBounds(54, 83, 117, 25);
+			rdbtn2Jugadores.setBounds(95, 224, 176, 25);
+			rdbtn2Jugadores.setBackground(Color.WHITE);
+			rdbtn2Jugadores.setForeground(Color.BLACK);
 		}
 		return rdbtn2Jugadores;
 	}
-	private JLabel getLblJugadorVsOrdenador() {
-		if (lblJugadorVsOrdenador == null) {
-			lblJugadorVsOrdenador = new JLabel("Jugador VS Ordenador");
-			lblJugadorVsOrdenador.setForeground(Color.GRAY);
-			lblJugadorVsOrdenador.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			lblJugadorVsOrdenador.setBounds(202, 54, 168, 20);
-		}
-		return lblJugadorVsOrdenador;
-	}
 	private JRadioButton getRdbtnModoFacil() {
 		if (rdbtnModoFacil == null) {
-			rdbtnModoFacil = new JRadioButton("Modo Fácil");
+			rdbtnModoFacil = new JRadioButton("Jugador VS Ordenador tonto");
 			rdbtnModoFacil.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			rdbtnModoFacil.setBounds(216, 83, 127, 25);
+			rdbtnModoFacil.setBounds(95, 259, 240, 25);
+			rdbtnModoFacil.setBackground(Color.WHITE);
+			rdbtnModoFacil.setForeground(Color.BLACK);
 		}
 		return rdbtnModoFacil;
 	}
 	private JRadioButton getRdbtnModoDificil() {
 		if (rdbtnModoDificil == null) {
-			rdbtnModoDificil = new JRadioButton("Modo Difícil");
+			rdbtnModoDificil = new JRadioButton("Jugador VS Ordenador listo");
 			rdbtnModoDificil.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			rdbtnModoDificil.setBounds(216, 113, 127, 25);
+			rdbtnModoDificil.setBounds(95, 296, 240, 25);
+			rdbtnModoDificil.setBackground(Color.WHITE);
+			rdbtnModoDificil.setForeground(Color.BLACK);
 		}
 		return rdbtnModoDificil;
-	}
-	private JSeparator getSeparator() {
-		if (separator == null) {
-			separator = new JSeparator();
-			separator.setOrientation(SwingConstants.VERTICAL);
-			separator.setBounds(179, 54, 14, 86);
-		}
-		return separator;
 	}
 	private JButton getBtnJugar() {
 		if (btnJugar == null) {
 			
 			btnJugar = new JButton("");
-			btnJugar.setBounds(423, 70, 70, 70);
+			btnJugar.setBounds(423, 250, 70, 70);
 			btnJugar.setBackground(Color.WHITE);
 			
 			btnJugar.addActionListener(new ActionListener() {
@@ -384,7 +356,7 @@ public class IU_menu1 extends JFrame {
 	
 	private JLabel getLblSeparador() {
 		if (lblSeparador == null) {
-			lblSeparador = new JLabel("                                                                                      ");
+			lblSeparador = new JLabel("                                                             ");
 		}
 		
 		return lblSeparador;
@@ -392,10 +364,34 @@ public class IU_menu1 extends JFrame {
 	private JLabel getLblDebesSeleccionarUn() {
 		if (lblDebesSeleccionarUn == null) {
 			lblDebesSeleccionarUn = new JLabel("Debes seleccionar un modo de juego");
-			lblDebesSeleccionarUn.setForeground(SystemColor.control);
+			lblDebesSeleccionarUn.setBackground(Color.WHITE);
+			lblDebesSeleccionarUn.setForeground(Color.WHITE);
 			lblDebesSeleccionarUn.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
-			lblDebesSeleccionarUn.setBounds(326, 20, 234, 16);
+			lblDebesSeleccionarUn.setBounds(51, 342, 234, 16);
+			if(idioma=="Castellano"){
+				lblDebesSeleccionarUn.setText("Debes seleccionar un modo de juego");
+			}else if(idioma=="Euskera"){
+				lblDebesSeleccionarUn.setText("Joko modu bat aukeratu behar duzu");
+			}
 		}
 		return lblDebesSeleccionarUn;
+	}
+	private JLabel getLblFondo() {
+		if (lblFondo == null) {
+			lblFondo = new JLabel("");
+			lblFondo.setFont(new Font("Tahoma", Font.BOLD, 17));
+			lblFondo.setBounds(0, -70, 684, 604);
+			ImageIcon fondo = new ImageIcon("fondo.png");
+			lblFondo.setIcon(fondo);
+		}
+		return lblFondo;
+	}
+	private JLabel getLblJugar() {
+		if (lblJugar == null) {
+			lblJugar = new JLabel("JUGAR");
+			lblJugar.setFont(new Font("Tahoma", Font.BOLD, 18));
+			lblJugar.setBounds(429, 326, 77, 16);
+		}
+		return lblJugar;
 	}
 }
