@@ -7,6 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import codigo.ColorFichas;
+
 import codigo.Conecta4;
 import codigo.EnumTipo;
 import codigo.Jugador;
@@ -31,6 +33,9 @@ public class IU_1jugador extends JFrame {
 	private JButton btnAceptar;
 	private JButton btnAtras;
 	private String level = "";
+	
+	private ColorFichas colores;
+	
 	
 	/**
 	 * Launch the application.
@@ -69,6 +74,13 @@ public class IU_1jugador extends JFrame {
 	public void ponerDificultad(String lvl) {
 		level = lvl;
 	}
+	
+	
+	//CAMBIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+	public void ponerColores(ColorFichas color) {
+		colores = color;
+	}
+	
 
 	private JPanel getPanelTexto() {
 		if (panelTexto == null) {
@@ -138,6 +150,9 @@ public class IU_1jugador extends JFrame {
 					
 					IU_juego juego = new IU_juego();
 					juego.setModo(level);
+					
+					//colorrrrrrr
+					juego.setColores(colores);
 
 					setVisible(false);
 					juego.setVisible(true);

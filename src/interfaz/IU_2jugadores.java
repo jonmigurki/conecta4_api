@@ -11,6 +11,8 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import codigo.ColorFichas;
+
 import codigo.Conecta4;
 import codigo.EnumTipo;
 import codigo.Jugador;
@@ -26,6 +28,8 @@ public class IU_2jugadores extends JDialog {
 	private final JPanel contentPanel = new JPanel();
 	private JTextField njugador1;
 	private JTextField njugador2;
+	
+	private ColorFichas colores;
 
 	/**
 	 * Launch the application.
@@ -133,6 +137,9 @@ public class IU_2jugadores extends JDialog {
 						IU_juego juego = new IU_juego();
 						juego.setModo("USUARIO");
 						
+						//FICHAAAAAAAAAS
+						juego.setColores(colores);
+						
 
 						setVisible(false);
 						juego.setVisible(true);
@@ -157,5 +164,12 @@ public class IU_2jugadores extends JDialog {
 			}
 		}
 	}
+	
+	//CAMBIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+	public void ponerColores(ColorFichas color) {
+		colores = color;
+	}
+
+
 
 }

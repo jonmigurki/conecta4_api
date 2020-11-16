@@ -8,6 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import codigo.ColorFichas;
+
 import codigo.Conecta4;
 import codigo.EnumTipo;
 import codigo.Jugador;
@@ -54,6 +56,9 @@ public class IU_menu1 extends JFrame {
 	private JLabel lblJugar;
 	//TODO: Solucionar errores y descomentar
 	//private static Musica musica;
+	
+	
+	private ColorFichas colores = new ColorFichas();
 
 	
 	/**
@@ -251,8 +256,18 @@ public class IU_menu1 extends JFrame {
 			panel_1.add(getLblDebesSeleccionarUn());
 			panel_1.add(getLblJugar());
 			
-			JButton btnPersonalizar = new JButton("New button");
-			btnPersonalizar.setBounds(338, 428, 89, 23);
+			
+			//BOTON PERSONALIZAAAAAAAAARRRRRRRRRRRRRRRR
+			JButton btnPersonalizar = new JButton("Personalizar");
+			btnPersonalizar.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					
+					//Al hacer click en el botón, se abre la ventana de personalización
+					IU_PersonalizarFichas pers = new IU_PersonalizarFichas(colores);
+					pers.setVisible(true);
+				}
+			});
+			btnPersonalizar.setBounds(366, 426, 117, 23);
 			panel_1.add(btnPersonalizar);
 			panel_1.add(getLblFondo());
 
@@ -311,11 +326,18 @@ public class IU_menu1 extends JFrame {
 					if(rdbtn2Jugadores.isSelected()){
 						IU_2jugadores nombres = new IU_2jugadores();
 						setVisible(false);
+						
+						nombres.ponerColores(colores);
+						
 						nombres.setVisible(true);
 						
 						
 					}else if(rdbtnModoFacil.isSelected()){
 						IU_1jugador interfaz = new IU_1jugador();
+						
+						//cambio
+						interfaz.ponerColores(colores);
+						
 						interfaz.ponerDificultad("FACIL");
 						setVisible(false);
 						interfaz.setVisible(true);
@@ -323,6 +345,10 @@ public class IU_menu1 extends JFrame {
 						
 					}else if(rdbtnModoDificil.isSelected()){
 						IU_1jugador interfaz = new IU_1jugador();
+						
+						//cambio
+						interfaz.ponerColores(colores);
+						
 						interfaz.ponerDificultad("DIFICIL");
 						setVisible(false);
 						interfaz.setVisible(true);

@@ -14,6 +14,8 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 import javax.swing.border.EmptyBorder;
 
+import codigo.ColorFichas;
+
 import codigo.Conecta4;
 import codigo.Jugador;
 //TODO: Solucionar errores y descomentar
@@ -68,9 +70,11 @@ public class IU_juego extends JFrame implements Observer{
 	
 	private String modo = "";
 	
+	private ColorFichas colores;
+	
 	private boolean fin = false;
 
-
+	IU_PersonalizarFichas ficha = new IU_PersonalizarFichas(new ColorFichas());
 	
 	
 	/**
@@ -263,7 +267,7 @@ public class IU_juego extends JFrame implements Observer{
 											if(j.getNum()==1){
 												lblJugador.setForeground(Color.BLUE);
 												//System.out.println(j.getNombre() + " acaba de meter ficha");
-												Image rojo1 = new ImageIcon("rojo.png").getImage();
+												Image rojo1 = new ImageIcon(colores.colorJ1).getImage();
 												color = new ImageIcon(rojo1.getScaledInstance(50, 50, Image.SCALE_SMOOTH));
 
 												
@@ -271,7 +275,7 @@ public class IU_juego extends JFrame implements Observer{
 											}else{
 												lblJugador.setForeground(Color.RED);
 											//System.out.println(j.getNombre() + " acaba de meter ficha");
-												Image azul1 = new ImageIcon("azul.png").getImage();
+												Image azul1 = new ImageIcon(colores.colorJ2).getImage();
 												color = new ImageIcon(azul1.getScaledInstance(50, 50, Image.SCALE_SMOOTH));
 
 											}
@@ -342,7 +346,7 @@ public class IU_juego extends JFrame implements Observer{
 											
 												//lblJugador.setForeground(Color.BLUE);
 												//System.out.println(j.getNombre() + " acaba de meter ficha");
-											Image rojo1 = new ImageIcon("rojo.png").getImage();
+											Image rojo1 = new ImageIcon(colores.colorJ1).getImage();
 											color = new ImageIcon(rojo1.getScaledInstance(50, 50, Image.SCALE_SMOOTH));
 
 												
@@ -399,7 +403,7 @@ public class IU_juego extends JFrame implements Observer{
 										Conecta4.getConecta4().getTablero().cambiarTurno();
 										ImageIcon color = null;
 										
-										Image azul1 = new ImageIcon("azul.png").getImage();
+										Image azul1 = new ImageIcon(colores.colorJ2).getImage();
 										color = new ImageIcon(azul1.getScaledInstance(50, 50, Image.SCALE_SMOOTH));
 
 									
@@ -460,7 +464,7 @@ public class IU_juego extends JFrame implements Observer{
 											
 												//lblJugador.setForeground(Color.BLUE);
 											//	System.out.println(j.getNombre() + " acaba de meter ficha");
-											Image rojo1 = new ImageIcon("rojo.png").getImage();
+											Image rojo1 = new ImageIcon(colores.colorJ1).getImage();
 											color = new ImageIcon(rojo1.getScaledInstance(50, 50, Image.SCALE_SMOOTH));
 
 											
@@ -517,7 +521,7 @@ public class IU_juego extends JFrame implements Observer{
 										Conecta4.getConecta4().getTablero().cambiarTurno();
 										ImageIcon color = null;
 										
-										Image azul1 = new ImageIcon("azul.png").getImage();
+										Image azul1 = new ImageIcon(colores.colorJ2).getImage();
 										color = new ImageIcon(azul1.getScaledInstance(50, 50, Image.SCALE_SMOOTH));
 
 									
@@ -571,6 +575,11 @@ public class IU_juego extends JFrame implements Observer{
 			
 		}
 		return panel;
+	}
+	
+	//CAMBIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+	public void setColores(ColorFichas color) {
+		colores = color;
 	}
 	
 	
