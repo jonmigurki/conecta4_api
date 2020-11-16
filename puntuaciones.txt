@@ -14,3 +14,7 @@ Maquina --> 46
 AAA --> 47
 hola --> 47
 vvf --> 47
+v --> 45
+morado --> 47
+morado --> 47
+mor1 --> 47

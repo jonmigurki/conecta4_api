@@ -267,11 +267,11 @@ public class IU_juego extends JFrame implements Observer{
 											if(j.getNum()==1){
 												
 												//Color del nombre del jugador
-												if(colores.colorJ1 =="rojo.png") {
+												if(colores.colorJ2 =="rojo.png") {
 													lblJugador.setForeground(Color.RED);
-												}if(colores.colorJ1 =="azul.png") {
+												}if(colores.colorJ2 =="azul.png") {
 													lblJugador.setForeground(Color.BLUE);
-												}if(colores.colorJ1 =="morado.png") {
+												}if(colores.colorJ2 =="morado.png") {
 													lblJugador.setForeground(Color.MAGENTA);
 												}
 												
@@ -284,11 +284,11 @@ public class IU_juego extends JFrame implements Observer{
 												
 											}else{
 												//Color del nombre del jugador
-												if(colores.colorJ2 =="rojo.png") {
+												if(colores.colorJ1 =="rojo.png") {
 													lblJugador.setForeground(Color.RED);
-												}if(colores.colorJ2 =="azul.png") {
+												}if(colores.colorJ1 =="azul.png") {
 													lblJugador.setForeground(Color.BLUE);
-												}if(colores.colorJ2 =="morado.png") {
+												}if(colores.colorJ1 =="morado.png") {
 													lblJugador.setForeground(Color.MAGENTA);
 												}
 												
