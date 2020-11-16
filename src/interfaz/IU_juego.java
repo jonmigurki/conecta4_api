@@ -60,6 +60,7 @@ public class IU_juego extends JFrame implements Observer{
 	private final JPanel panelnorte = new JPanel();
 	private final JLabel lblTurnoDe = new JLabel("Turno de:");
 	private final JLabel lblTxanda = new JLabel("ren txanda");
+	private final JLabel lblTurnOf = new JLabel("Turn of:");
 	private final JLabel lblJugador = new JLabel();
 	
 	//TODO: Solucionar errores y descomentar
@@ -124,7 +125,7 @@ public class IU_juego extends JFrame implements Observer{
 		//musica = null;
 
 		
-		if(Conecta4.getConecta4().getIdioma().equals("Castellano")){
+		if (Conecta4.getConecta4().getIdioma().equals("Castellano")) {
 			panelnorte.add(lblTurnoDe);
 			lblJugador.setFont(new Font("Tahoma", Font.BOLD, 14));
 			lblJugador.setText(Conecta4.getConecta4().getTablero().getJugador1().getNombre());
@@ -134,16 +135,26 @@ public class IU_juego extends JFrame implements Observer{
 			//TODO: Solucionar errores y descomentar
 			//musica = null;
 
-		}else{
-			lblJugador.setFont(new Font("Tahoma", Font.BOLD, 14));
-			lblJugador.setText(Conecta4.getConecta4().getTablero().getJugador1().getNombre());
-			lblJugador.setForeground(Color.RED);
-			panelnorte.add(lblJugador);
-			panelnorte.add(lblTxanda);
-			contentPane.add(getPanelCentro(), BorderLayout.CENTER);
-			//TODO: Solucionar errores y descomentar
-			//musica = null;
-
+		} else {
+			if (Conecta4.getConecta4().getIdioma().equals("Euskera")) {
+				lblJugador.setFont(new Font("Tahoma", Font.BOLD, 14));
+				lblJugador.setText(Conecta4.getConecta4().getTablero().getJugador1().getNombre());
+				lblJugador.setForeground(Color.RED);
+				panelnorte.add(lblJugador);
+				panelnorte.add(lblTxanda);
+				contentPane.add(getPanelCentro(), BorderLayout.CENTER);
+				//TODO: Solucionar errores y descomentar
+				//musica = null;
+			} else {
+				panelnorte.add(lblTurnOf);
+				lblJugador.setFont(new Font("Tahoma", Font.BOLD, 14));
+				lblJugador.setText(Conecta4.getConecta4().getTablero().getJugador1().getNombre());
+				lblJugador.setForeground(Color.RED);
+				panelnorte.add(lblJugador);
+				contentPane.add(getPanelCentro(), BorderLayout.CENTER);
+				//TODO: Solucionar errores y descomentar
+				//musica = null;
+			}
 		}
 		
 		

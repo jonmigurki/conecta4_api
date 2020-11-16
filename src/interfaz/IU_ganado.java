@@ -87,14 +87,18 @@ public class IU_ganado extends JDialog {
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
-				if(Conecta4.getConecta4().getIdioma().equals("Castellano")){
+				if (Conecta4.getConecta4().getIdioma().equals("Castellano")) {
 					JLabel texto = new JLabel("¿Quieres jugar otra partida?                       ");
 					buttonPane.add(texto);
-				}else{
-					JLabel texto = new JLabel("Beste partida bat nahi duzu?                       ");
-					buttonPane.add(texto);
+				} else {
+					if (Conecta4.getConecta4().getIdioma().equals("Euskera")) {
+						JLabel texto = new JLabel("Beste partida bat nahi duzu?                       ");
+						buttonPane.add(texto);
+					} else {
+						JLabel texto = new JLabel("Want to play another match?                       ");
+						buttonPane.add(texto);
+					}
 				}
-				
 				JButton okButton = new JButton("V");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
@@ -123,12 +127,15 @@ public class IU_ganado extends JDialog {
 	
 	private JLabel getLblHaGanado() {
 		if (lblHaGanado == null) {
-			if(Conecta4.getConecta4().getIdioma().equals("Castellano")){
+			if (Conecta4.getConecta4().getIdioma().equals("Castellano")) {
 				lblHaGanado = new JLabel("HA GANADO");
-			}else{
-				lblHaGanado = new JLabel("IRABAZI DU");
+			} else {
+				if (Conecta4.getConecta4().getIdioma().equals("Euskera")) {
+					lblHaGanado = new JLabel("IRABAZI DU");
+				} else {
+					lblHaGanado = new JLabel("YOU WON");
+				}
 			}
-			
 			lblHaGanado.setHorizontalAlignment(SwingConstants.CENTER);
 			lblHaGanado.setFont(new Font("Tahoma", Font.BOLD, 20));
 			lblHaGanado.setBounds(12, 32, 472, 36);

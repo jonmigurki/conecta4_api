@@ -54,18 +54,26 @@ public class IU_2jugadores extends JDialog {
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		{
-			if(Conecta4.getConecta4().getIdioma().equals("Castellano")){
+			if (Conecta4.getConecta4().getIdioma().equals("Castellano")) {
 				JLabel lblIntroduceNombrePara = new JLabel("Introduce nombre para Jugador 1:");
 				lblIntroduceNombrePara.setBounds(60, 27, 224, 16);
 				lblIntroduceNombrePara.setFont(new Font("Tahoma", Font.PLAIN, 14));
 				contentPanel.add(lblIntroduceNombrePara);
-			}else{
-				JLabel lblIntroduceNombrePara = new JLabel("1. Jokalariaren izena idatzi:");
-				lblIntroduceNombrePara.setBounds(60, 27, 224, 16);
-				lblIntroduceNombrePara.setFont(new Font("Tahoma", Font.PLAIN, 14));
-				contentPanel.add(lblIntroduceNombrePara);
 			}
-			
+			else {
+				if (Conecta4.getConecta4().getIdioma().equals("Euskera")) {
+					JLabel lblIntroduceNombrePara = new JLabel("1. Jokalariaren izena idatzi:");
+					lblIntroduceNombrePara.setBounds(60, 27, 224, 16);
+					lblIntroduceNombrePara.setFont(new Font("Tahoma", Font.PLAIN, 14));
+					contentPanel.add(lblIntroduceNombrePara);
+				}
+				else {
+					JLabel lblIntroduceNombrePara = new JLabel("Input name for Player 1:");
+					lblIntroduceNombrePara.setBounds(60, 27, 224, 16);
+					lblIntroduceNombrePara.setFont(new Font("Tahoma", Font.PLAIN, 14));
+					contentPanel.add(lblIntroduceNombrePara);
+				}
+			}
 		}
 		{
 			njugador1 = new JTextField();
@@ -75,16 +83,25 @@ public class IU_2jugadores extends JDialog {
 			njugador1.setColumns(10);
 		}
 		{
-			if(Conecta4.getConecta4().getIdioma().equals("Castellano")){
+			if (Conecta4.getConecta4().getIdioma().equals("Castellano")) {
 				JLabel lblIntroduceNombrePara_1 = new JLabel("Introduce nombre para Jugador 2:");
 				lblIntroduceNombrePara_1.setBounds(62, 96, 224, 16);
 				lblIntroduceNombrePara_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 				contentPanel.add(lblIntroduceNombrePara_1);
-			}else{
-				JLabel lblIntroduceNombrePara_1 = new JLabel("2. Jokalariaren izena idatzi:");
-				lblIntroduceNombrePara_1.setBounds(62, 96, 224, 16);
-				lblIntroduceNombrePara_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-				contentPanel.add(lblIntroduceNombrePara_1);
+			}
+			else {
+				if (Conecta4.getConecta4().getIdioma().equals("Euskera")) {
+					JLabel lblIntroduceNombrePara_1 = new JLabel("2. Jokalariaren izena idatzi:");
+					lblIntroduceNombrePara_1.setBounds(62, 96, 224, 16);
+					lblIntroduceNombrePara_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+					contentPanel.add(lblIntroduceNombrePara_1);
+				}
+				else {
+					JLabel lblIntroduceNombrePara_1 = new JLabel("Input name for Player 2:");
+					lblIntroduceNombrePara_1.setBounds(62, 96, 224, 16);
+					lblIntroduceNombrePara_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+					contentPanel.add(lblIntroduceNombrePara_1);
+				}
 			}
 			
 		}

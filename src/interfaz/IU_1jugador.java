@@ -97,16 +97,23 @@ public class IU_1jugador extends JFrame {
 	}
 	private JLabel getLblNombre() {
 		if (lblNombre == null) {
-			if(Conecta4.getConecta4().getIdioma().equals("Castellano")){
+			if (Conecta4.getConecta4().getIdioma().equals("Castellano")) {
 				lblNombre = new JLabel("Introduzca su nombre/apodo");
 				lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 14));
 				lblNombre.setBounds(81, 46, 180, 14);
-			}else {
-				lblNombre = new JLabel("Idatzi zure izena/gaitzizena");
-				lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 14));
-				lblNombre.setBounds(81, 46, 180, 14);
 			}
-			
+			else {
+				if (Conecta4.getConecta4().getIdioma().equals("Euskera")) {
+					lblNombre = new JLabel("Idatzi zure izena/gaitzizena");
+					lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 14));
+					lblNombre.setBounds(81, 46, 180, 14);
+				}
+				else {
+					lblNombre = new JLabel("Input your name/nickname");
+					lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 14));
+					lblNombre.setBounds(81, 46, 180, 14);
+				}
+			}
 		}
 		return lblNombre;
 	}

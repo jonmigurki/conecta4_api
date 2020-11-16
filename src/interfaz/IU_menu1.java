@@ -35,6 +35,7 @@ public class IU_menu1 extends JFrame {
 
 	private JPanel contentPane;
 	private JPanel panelsur;
+	private JButton eng;
 	private JButton eus;
 	private JButton esp;
 	
@@ -106,6 +107,7 @@ public class IU_menu1 extends JFrame {
 			panelsur.add(getLblSeparador());
 			panelsur.add(getCastellano());
 			panelsur.add(getEuskera());
+			panelsur.add(getEnglish());
 			panelsur.setBackground(Color.WHITE);
 		}
 		return panelsur;
@@ -149,6 +151,30 @@ public class IU_menu1 extends JFrame {
 		return btnAyuda;
 	}
 	
+	private JButton getEnglish() {
+		if (eng == null) {
+			eng = new JButton();
+			eng.setBackground(Color.WHITE);
+			eng.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					idioma = "English";
+					Conecta4.getConecta4().setIdioma("English");
+					eng.setBackground(Color.YELLOW);
+					eus.setBackground(Color.WHITE);
+					esp.setBackground(Color.WHITE);
+					lblSeleccioneModoDe.setText("Select a game mode:");
+					rdbtn2Jugadores.setText("Player vs Player");
+					rdbtnModoFacil.setText("Player vs Easy AI");
+					rdbtnModoDificil.setText("Player vs Hard AI");
+					lblDebesSeleccionarUn.setText("You must choose a game mode");
+				}
+			});
+		}
+		Image eng1 = new ImageIcon("english.jpg").getImage();
+		ImageIcon eng2 = new ImageIcon(eng1.getScaledInstance(70, 40, Image.SCALE_SMOOTH));
+		eng.setIcon(eng2);
+		return eng;
+	}
 	
 	private JButton getEuskera() {
 		if (eus == null) {
@@ -158,6 +184,7 @@ public class IU_menu1 extends JFrame {
 				public void actionPerformed(ActionEvent arg0) {
 					idioma = "Euskera";
 					Conecta4.getConecta4().setIdioma("Euskera");
+					eng.setBackground(Color.WHITE);
 					eus.setBackground(Color.YELLOW);
 					esp.setBackground(Color.WHITE);
 					lblSeleccioneModoDe.setText("Joko modu bat aukeratu:");
@@ -167,31 +194,13 @@ public class IU_menu1 extends JFrame {
 					lblDebesSeleccionarUn.setText("Joko modu bat aukeratu behar duzu");
 				}
 			});
-			
-			
 		}
-		
-		Image euskadi = null;
-		
-		/*
-			try {
-				euskadi = ImageIO.read(getClass().getResource("../interfaz/euskera.png"));
-				euskadi = euskadi.getScaledInstance(70, 40, Image.SCALE_SMOOTH);
-
-				} catch (IOException e1) {
-					e1.printStackTrace();
-				}
-			*/
 		Image eusk = new ImageIcon("euskera.png").getImage();
 		ImageIcon eus2 = new ImageIcon(eusk.getScaledInstance(70, 40, Image.SCALE_SMOOTH));
-
 		eus.setIcon(eus2);
-		//btnAyuda.setIcon(new ImageIcon(ayuda));
-		
-			//eus.setIcon(new ImageIcon(euskadi));
 		return eus;
-		
 	}
+	
 	private JButton getCastellano() {
 		if (esp == null) {
 			esp = new JButton();
@@ -200,40 +209,23 @@ public class IU_menu1 extends JFrame {
 				public void actionPerformed(ActionEvent arg0) {
 					idioma = "Castellano";
 					Conecta4.getConecta4().setIdioma("Castellano");
-					esp.setBackground(Color.YELLOW);
+					eng.setBackground(Color.WHITE);
 					eus.setBackground(Color.WHITE);
+					esp.setBackground(Color.YELLOW);
 					lblSeleccioneModoDe.setText("Seleccione modo de juego:");
 					rdbtn2Jugadores.setText("Jugador VS Jugador");
 					rdbtnModoFacil.setText("Jugador VS Ordenador tonto");
 					rdbtnModoDificil.setText("Jugador VS Ordenador listo");
-
+					lblDebesSeleccionarUn.setText("Debes seleccionar un modo de juego");
 				}
 			});
 		}
-		
-		Image castellano = null;
-		
-	/*	
-		try {
-			castellano = ImageIO.read(getClass().getResource("../interfaz/castellano.png"));
-			castellano = castellano.getScaledInstance(70, 40, Image.SCALE_SMOOTH);
-
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-		*/
-		
 		Image esp1 = new ImageIcon("castellano.png").getImage();
 		ImageIcon esp2 = new ImageIcon(esp1.getScaledInstance(70, 40, Image.SCALE_SMOOTH));
-
 		esp.setIcon(esp2);
-		//btnAyuda.setIcon(new ImageIcon(ayuda));
-		
-
-		//esp.setIcon(new ImageIcon(castellano));
-		
 		return esp;
 	}
+	
 	private JPanel getPanelcentral() {
 		if (panelcentral == null) {
 			panelcentral = new JPanel();
@@ -376,10 +368,14 @@ public class IU_menu1 extends JFrame {
 			lblDebesSeleccionarUn.setForeground(Color.WHITE);
 			lblDebesSeleccionarUn.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
 			lblDebesSeleccionarUn.setBounds(51, 342, 234, 16);
-			if(idioma=="Castellano"){
+			if (idioma == "Castellano") {
 				lblDebesSeleccionarUn.setText("Debes seleccionar un modo de juego");
-			}else if(idioma=="Euskera"){
+			}
+			else if (idioma == "Euskera") {
 				lblDebesSeleccionarUn.setText("Joko modu bat aukeratu behar duzu");
+			}
+			else if (idioma == "English") {
+				lblDebesSeleccionarUn.setText("You must choose a game mode");
 			}
 		}
 		return lblDebesSeleccionarUn;
