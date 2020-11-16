@@ -250,6 +250,10 @@ public class IU_menu1 extends JFrame {
 			btngroup1.add(getRdbtnModoDificil());
 			panel_1.add(getLblDebesSeleccionarUn());
 			panel_1.add(getLblJugar());
+			
+			JButton btnPersonalizar = new JButton("New button");
+			btnPersonalizar.setBounds(338, 428, 89, 23);
+			panel_1.add(btnPersonalizar);
 			panel_1.add(getLblFondo());
 
 		}
