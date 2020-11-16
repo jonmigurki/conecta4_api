@@ -356,7 +356,7 @@ public class IU_menu1 extends JFrame {
 	
 	private JLabel getLblSeparador() {
 		if (lblSeparador == null) {
-			lblSeparador = new JLabel("                                                             ");
+			lblSeparador = new JLabel("                               ");
 		}
 		
 		return lblSeparador;
