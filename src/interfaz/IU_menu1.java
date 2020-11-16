@@ -258,7 +258,10 @@ public class IU_menu1 extends JFrame {
 			
 			
 			//BOTON PERSONALIZAAAAAAAAARRRRRRRRRRRRRRRR
-			JButton btnPersonalizar = new JButton("Personalizar");
+			JButton btnPersonalizar = new JButton("Personalizar fichas");
+			btnPersonalizar.setFont(new Font("Tahoma", Font.BOLD, 14));
+			btnPersonalizar.setBackground(Color.WHITE);
+			btnPersonalizar.setForeground(Color.MAGENTA);
 			btnPersonalizar.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					
@@ -267,7 +270,7 @@ public class IU_menu1 extends JFrame {
 					pers.setVisible(true);
 				}
 			});
-			btnPersonalizar.setBounds(366, 426, 117, 23);
+			btnPersonalizar.setBounds(318, 402, 188, 23);
 			panel_1.add(btnPersonalizar);
 			panel_1.add(getLblFondo());
 

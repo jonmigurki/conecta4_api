@@ -16,6 +16,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.SystemColor;
+import java.awt.Font;
+import javax.swing.UIManager;
 
 public class IU_PersonalizarFichas extends JFrame {
 
@@ -54,25 +56,31 @@ public class IU_PersonalizarFichas extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 497, 321);
 		contentPane = new JPanel();
-		contentPane.setBackground(SystemColor.control);
+		contentPane.setBackground(new Color(240, 248, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JTextPane txtpnquColorQuieres = new JTextPane();
+		txtpnquColorQuieres.setFont(new Font("Tahoma", Font.BOLD, 11));
 		txtpnquColorQuieres.setForeground(Color.BLACK);
-		txtpnquColorQuieres.setBackground(SystemColor.control);
-		txtpnquColorQuieres.setText("\u00BFQu\u00E9 color quieres para el Jugador 1?");
-		txtpnquColorQuieres.setBounds(39, 30, 291, 20);
+		txtpnquColorQuieres.setBackground(new Color(240, 248, 255));
+		txtpnquColorQuieres.setText("Seleccione un color para el Jugador 1:");
+		txtpnquColorQuieres.setBounds(19, 25, 291, 20);
 		contentPane.add(txtpnquColorQuieres);
 		
 		JTextPane txtpnquColorQuieres_1 = new JTextPane();
-		txtpnquColorQuieres_1.setBackground(SystemColor.control);
-		txtpnquColorQuieres_1.setText("\u00BFQu\u00E9 color quieres para el Jugador 2?");
-		txtpnquColorQuieres_1.setBounds(39, 168, 271, 20);
+		txtpnquColorQuieres_1.setForeground(Color.BLACK);
+		txtpnquColorQuieres_1.setFont(new Font("Tahoma", Font.BOLD, 11));
+		txtpnquColorQuieres_1.setBackground(new Color(240, 248, 255));
+		txtpnquColorQuieres_1.setText("Seleccione un color para el Jugador 2:");
+		txtpnquColorQuieres_1.setBounds(19, 161, 271, 20);
 		contentPane.add(txtpnquColorQuieres_1);
 		
 		rdbtnRojoJ1 = new JRadioButton("Rojo");
+		rdbtnRojoJ1.setFont(new Font("Tahoma", Font.ITALIC, 11));
+		rdbtnRojoJ1.setForeground(Color.RED);
+		rdbtnRojoJ1.setBackground(new Color(240, 248, 255));
 		rdbtnRojoJ1.addActionListener(new ActionListener() {
 			//Si el rojo para J1 ha sido seleccionado
 			public void actionPerformed(ActionEvent e) {
@@ -86,10 +94,13 @@ public class IU_PersonalizarFichas extends JFrame {
 					
 			}
 		});
-		rdbtnRojoJ1.setBounds(39, 70, 111, 23);
+		rdbtnRojoJ1.setBounds(39, 52, 111, 23);
 		contentPane.add(rdbtnRojoJ1);
 		
 		rdbtnAzulJ1 = new JRadioButton("Azul");
+		rdbtnAzulJ1.setFont(new Font("Tahoma", Font.ITALIC, 11));
+		rdbtnAzulJ1.setForeground(Color.BLUE);
+		rdbtnAzulJ1.setBackground(new Color(240, 248, 255));
 		rdbtnAzulJ1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (rdbtnAzulJ1.isSelected()) {
@@ -102,10 +113,13 @@ public class IU_PersonalizarFichas extends JFrame {
 					
 			}
 		});
-		rdbtnAzulJ1.setBounds(39, 96, 111, 23);
+		rdbtnAzulJ1.setBounds(39, 78, 111, 23);
 		contentPane.add(rdbtnAzulJ1);
 		
 		rdbtnMoradoJ1 = new JRadioButton("Morado");
+		rdbtnMoradoJ1.setFont(new Font("Tahoma", Font.ITALIC, 11));
+		rdbtnMoradoJ1.setForeground(new Color(255, 0, 255));
+		rdbtnMoradoJ1.setBackground(new Color(240, 248, 255));
 		rdbtnMoradoJ1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (rdbtnMoradoJ1.isSelected()) {
@@ -118,10 +132,13 @@ public class IU_PersonalizarFichas extends JFrame {
 					
 			}
 		});
-		rdbtnMoradoJ1.setBounds(39, 122, 111, 23);
+		rdbtnMoradoJ1.setBounds(39, 104, 111, 23);
 		contentPane.add(rdbtnMoradoJ1);
 		
 		rdbtnRojoJ2 = new JRadioButton("Rojo");
+		rdbtnRojoJ2.setFont(new Font("Tahoma", Font.ITALIC, 11));
+		rdbtnRojoJ2.setForeground(Color.RED);
+		rdbtnRojoJ2.setBackground(new Color(240, 248, 255));
 		rdbtnRojoJ2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (rdbtnRojoJ2.isSelected()) {
@@ -134,10 +151,13 @@ public class IU_PersonalizarFichas extends JFrame {
 					
 			}
 		});
-		rdbtnRojoJ2.setBounds(39, 202, 111, 23);
+		rdbtnRojoJ2.setBounds(39, 188, 111, 23);
 		contentPane.add(rdbtnRojoJ2);
 		
 		rdbtnAzulJ2 = new JRadioButton("Azul");
+		rdbtnAzulJ2.setFont(new Font("Tahoma", Font.ITALIC, 11));
+		rdbtnAzulJ2.setForeground(Color.BLUE);
+		rdbtnAzulJ2.setBackground(new Color(240, 248, 255));
 		rdbtnAzulJ2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (rdbtnAzulJ2.isSelected()) {
@@ -150,10 +170,13 @@ public class IU_PersonalizarFichas extends JFrame {
 					
 			}
 		});
-		rdbtnAzulJ2.setBounds(39, 228, 111, 23);
+		rdbtnAzulJ2.setBounds(39, 214, 111, 23);
 		contentPane.add(rdbtnAzulJ2);
 		
 		rdbtnMoradoJ2 = new JRadioButton("Morado");
+		rdbtnMoradoJ2.setFont(new Font("Tahoma", Font.ITALIC, 11));
+		rdbtnMoradoJ2.setForeground(Color.MAGENTA);
+		rdbtnMoradoJ2.setBackground(new Color(240, 248, 255));
 		rdbtnMoradoJ2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (rdbtnMoradoJ2.isSelected()) {
@@ -166,10 +189,12 @@ public class IU_PersonalizarFichas extends JFrame {
 					
 			}
 		});
-		rdbtnMoradoJ2.setBounds(39, 254, 111, 23);
+		rdbtnMoradoJ2.setBounds(39, 240, 111, 23);
 		contentPane.add(rdbtnMoradoJ2);
 		
 		JButton btnVolver = new JButton("Aceptar");
+		btnVolver.setForeground(Color.BLACK);
+		btnVolver.setBackground(SystemColor.control);
 		btnVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//IU_menu1 atras = new IU_menu1();
