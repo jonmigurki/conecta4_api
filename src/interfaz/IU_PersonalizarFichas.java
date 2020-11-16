@@ -53,6 +53,8 @@ public class IU_PersonalizarFichas extends JFrame {
 	public IU_PersonalizarFichas(ColorFichas ficha) {
 		colores = ficha;
 		
+
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 497, 321);
 		contentPane = new JPanel();
@@ -202,8 +204,7 @@ public class IU_PersonalizarFichas extends JFrame {
 				
 				if (fijaColores()) {
 					setVisible(false);
-				}
-				
+				}			
 				
 			}
 		});
@@ -217,16 +218,20 @@ public class IU_PersonalizarFichas extends JFrame {
 			color1 = "rojo.png";
 		}else if(rdbtnAzulJ1.isSelected()) {
 			color1 = "azul.png";
-		}else {
+		}else if(rdbtnMoradoJ1.isSelected()){
 			color1 = "morado.png";
+		}else {
+			color1 ="rojo.png";
 		}
 		String color2;
 		if (rdbtnRojoJ2.isSelected()) {
 			color2 = "rojo.png";
 		}else if(rdbtnAzulJ2.isSelected()) {
 			color2 = "azul.png";
-		}else {
+		}else if(rdbtnMoradoJ2.isSelected()){
 			color2 = "morado.png";
+		}else {
+			color2 ="azul.png";
 		}
 		colores.colorJ1 = color1;
 		colores.colorJ2 = color2;
@@ -239,8 +244,10 @@ public class IU_PersonalizarFichas extends JFrame {
 			color1 = "rojo.png";
 		}else if(rdbtnAzulJ1.isSelected()) {
 			color1 = "azul.png";
-		}else {
+		}else if(rdbtnMoradoJ2.isSelected()){
 			color1 = "morado.png";
+		}else {
+			color1 = "rojo.png";
 		}
 		return color1;
 	}
@@ -251,8 +258,10 @@ public class IU_PersonalizarFichas extends JFrame {
 			color2 = "rojo.png";
 		}else if(rdbtnAzulJ2.isSelected()) {
 			color2 = "azul.png";
-		}else {
+		}else if(rdbtnMoradoJ2.isSelected()){
 			color2 = "morado.png";
+		}else {
+			color2 = "azul.png";
 		}
 		return color2;
 	}

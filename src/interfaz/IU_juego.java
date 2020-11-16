@@ -133,7 +133,7 @@ public class IU_juego extends JFrame implements Observer{
 			panelnorte.add(lblTurnoDe);
 			lblJugador.setFont(new Font("Tahoma", Font.BOLD, 14));
 			lblJugador.setText(Conecta4.getConecta4().getTablero().getJugador1().getNombre());
-			lblJugador.setForeground(Color.RED);
+			lblJugador.setForeground(Color.BLACK);
 			panelnorte.add(lblJugador);
 			contentPane.add(getPanelCentro(), BorderLayout.CENTER);
 			//TODO: Solucionar errores y descomentar
@@ -143,7 +143,7 @@ public class IU_juego extends JFrame implements Observer{
 			if (Conecta4.getConecta4().getIdioma().equals("Euskera")) {
 				lblJugador.setFont(new Font("Tahoma", Font.BOLD, 14));
 				lblJugador.setText(Conecta4.getConecta4().getTablero().getJugador1().getNombre());
-				lblJugador.setForeground(Color.RED);
+				lblJugador.setForeground(Color.BLACK);
 				panelnorte.add(lblJugador);
 				panelnorte.add(lblTxanda);
 				contentPane.add(getPanelCentro(), BorderLayout.CENTER);
@@ -153,7 +153,7 @@ public class IU_juego extends JFrame implements Observer{
 				panelnorte.add(lblTurnOf);
 				lblJugador.setFont(new Font("Tahoma", Font.BOLD, 14));
 				lblJugador.setText(Conecta4.getConecta4().getTablero().getJugador1().getNombre());
-				lblJugador.setForeground(Color.RED);
+				lblJugador.setForeground(Color.BLACK);
 				panelnorte.add(lblJugador);
 				contentPane.add(getPanelCentro(), BorderLayout.CENTER);
 				//TODO: Solucionar errores y descomentar
@@ -265,7 +265,17 @@ public class IU_juego extends JFrame implements Observer{
 											ImageIcon color = null;
 											
 											if(j.getNum()==1){
-												lblJugador.setForeground(Color.BLUE);
+												
+												//Color del nombre del jugador
+												if(colores.colorJ1 =="rojo.png") {
+													lblJugador.setForeground(Color.RED);
+												}if(colores.colorJ1 =="azul.png") {
+													lblJugador.setForeground(Color.BLUE);
+												}if(colores.colorJ1 =="morado.png") {
+													lblJugador.setForeground(Color.MAGENTA);
+												}
+												
+																								
 												//System.out.println(j.getNombre() + " acaba de meter ficha");
 												Image rojo1 = new ImageIcon(colores.colorJ1).getImage();
 												color = new ImageIcon(rojo1.getScaledInstance(50, 50, Image.SCALE_SMOOTH));
@@ -273,7 +283,15 @@ public class IU_juego extends JFrame implements Observer{
 												
 												
 											}else{
-												lblJugador.setForeground(Color.RED);
+												//Color del nombre del jugador
+												if(colores.colorJ2 =="rojo.png") {
+													lblJugador.setForeground(Color.RED);
+												}if(colores.colorJ2 =="azul.png") {
+													lblJugador.setForeground(Color.BLUE);
+												}if(colores.colorJ2 =="morado.png") {
+													lblJugador.setForeground(Color.MAGENTA);
+												}
+												
 											//System.out.println(j.getNombre() + " acaba de meter ficha");
 												Image azul1 = new ImageIcon(colores.colorJ2).getImage();
 												color = new ImageIcon(azul1.getScaledInstance(50, 50, Image.SCALE_SMOOTH));
@@ -342,6 +360,15 @@ public class IU_juego extends JFrame implements Observer{
 											Jugador j = Conecta4.getConecta4().getTablero().getTurnoActual();
 		
 											ImageIcon color = null;
+											
+											//Color del nombre del jugador
+											if(colores.colorJ1 =="rojo.png") {
+												lblJugador.setForeground(Color.RED);
+											}if(colores.colorJ1 =="azul.png") {
+												lblJugador.setForeground(Color.BLUE);
+											}if(colores.colorJ1 =="morado.png") {
+												lblJugador.setForeground(Color.MAGENTA);
+											}
 											
 											
 												//lblJugador.setForeground(Color.BLUE);
@@ -460,6 +487,15 @@ public class IU_juego extends JFrame implements Observer{
 											Jugador j = Conecta4.getConecta4().getTablero().getTurnoActual();
 		
 											ImageIcon color = null;
+											
+											//Color del nombre del jugador
+											if(colores.colorJ1 =="rojo.png") {
+												lblJugador.setForeground(Color.RED);
+											}if(colores.colorJ1 =="azul.png") {
+												lblJugador.setForeground(Color.BLUE);
+											}if(colores.colorJ1 =="morado.png") {
+												lblJugador.setForeground(Color.MAGENTA);
+											}
 											
 											
 												//lblJugador.setForeground(Color.BLUE);

@@ -101,6 +101,11 @@ public class IU_menu1 extends JFrame {
 		//musica.playMusica2();
 		
 		
+		//Incializamos los colores por si el usuario no quiere personalizar
+		colores.colorJ1 = "rojo.png";
+		colores.colorJ2 = "azul.png";
+		
+		
 	}
 
 	private JPanel getPanelsur() {

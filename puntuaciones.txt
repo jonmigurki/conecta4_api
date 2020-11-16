@@ -13,3 +13,4 @@ AA --> 47
 Maquina --> 46
 AAA --> 47
 hola --> 47
+vvf --> 47
