@@ -65,22 +65,6 @@ public class IU_PersonalizarFichas extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JTextPane txtpnquColorQuieres = new JTextPane();
-		txtpnquColorQuieres.setFont(new Font("Tahoma", Font.BOLD, 11));
-		txtpnquColorQuieres.setForeground(Color.BLACK);
-		txtpnquColorQuieres.setBackground(new Color(240, 248, 255));
-		txtpnquColorQuieres.setText("Seleccione un color para el Jugador 1:");
-		txtpnquColorQuieres.setBounds(19, 25, 291, 20);
-		contentPane.add(txtpnquColorQuieres);
-		
-		JTextPane txtpnquColorQuieres_1 = new JTextPane();
-		txtpnquColorQuieres_1.setForeground(Color.BLACK);
-		txtpnquColorQuieres_1.setFont(new Font("Tahoma", Font.BOLD, 11));
-		txtpnquColorQuieres_1.setBackground(new Color(240, 248, 255));
-		txtpnquColorQuieres_1.setText("Seleccione un color para el Jugador 2:");
-		txtpnquColorQuieres_1.setBounds(19, 161, 271, 20);
-		contentPane.add(txtpnquColorQuieres_1);
-		
 		rdbtnRojoJ1 = new JRadioButton("Rojo");
 		rdbtnRojoJ1.setFont(new Font("Tahoma", Font.ITALIC, 11));
 		rdbtnRojoJ1.setForeground(Color.RED);
@@ -98,7 +82,7 @@ public class IU_PersonalizarFichas extends JFrame {
 					
 			}
 		});
-		rdbtnRojoJ1.setBounds(39, 52, 111, 23);
+		rdbtnRojoJ1.setBounds(39, 81, 111, 23);
 		contentPane.add(rdbtnRojoJ1);
 		
 		rdbtnAzulJ1 = new JRadioButton("Azul");
@@ -117,7 +101,7 @@ public class IU_PersonalizarFichas extends JFrame {
 					
 			}
 		});
-		rdbtnAzulJ1.setBounds(39, 78, 111, 23);
+		rdbtnAzulJ1.setBounds(39, 107, 111, 23);
 		contentPane.add(rdbtnAzulJ1);
 		
 		rdbtnMoradoJ1 = new JRadioButton("Morado");
@@ -136,7 +120,7 @@ public class IU_PersonalizarFichas extends JFrame {
 					
 			}
 		});
-		rdbtnMoradoJ1.setBounds(39, 104, 111, 23);
+		rdbtnMoradoJ1.setBounds(39, 133, 111, 23);
 		contentPane.add(rdbtnMoradoJ1);
 		
 		rdbtnRojoJ2 = new JRadioButton("Rojo");
@@ -212,6 +196,20 @@ public class IU_PersonalizarFichas extends JFrame {
 		});
 		btnVolver.setBounds(370, 254, 89, 23);
 		contentPane.add(btnVolver);
+		
+		JLabel txtpnquColorQuieres_1 = new JLabel("Seleccione un color para el Jugador 2:");
+		txtpnquColorQuieres_1.setBounds(39, 167, 351, 14);
+		contentPane.add(txtpnquColorQuieres_1);
+		
+		JLabel txtpnquColorQuieres = new JLabel("Seleccione un color para el Jugador 1:");
+		txtpnquColorQuieres.setBounds(39, 65, 367, 14);
+		contentPane.add(txtpnquColorQuieres);
+		
+		JLabel lblNewLabel = new JLabel("\u00A1Seleccione un color para ambos jugadores, por favor!");
+		lblNewLabel.setForeground(new Color(153, 0, 255));
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		lblNewLabel.setBounds(39, 29, 400, 14);
+		contentPane.add(lblNewLabel);
 		
 		//Idioma
 		if (Conecta4.getConecta4().getIdioma().equals("Euskera")) {
