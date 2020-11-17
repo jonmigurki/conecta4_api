@@ -90,9 +90,10 @@ public class IU_PersonalizarFichas extends JFrame {
 		rdbtnAzulJ1.setForeground(Color.BLUE);
 		rdbtnAzulJ1.setBackground(new Color(240, 248, 255));
 		rdbtnAzulJ1.addActionListener(new ActionListener() {
+			//Si el azul para J1 ha sido seleccionado
 			public void actionPerformed(ActionEvent e) {
 				if (rdbtnAzulJ1.isSelected()) {
-					//Deshabilitar rojo para J2 y el resto de opciones para J1
+					//Deshabilitar azul para J2 y el resto de opciones para J1
 					rdbtnAzulJ2.setSelected(false);
 					
 					rdbtnRojoJ1.setSelected(false);
@@ -109,9 +110,10 @@ public class IU_PersonalizarFichas extends JFrame {
 		rdbtnMoradoJ1.setForeground(new Color(255, 0, 255));
 		rdbtnMoradoJ1.setBackground(new Color(240, 248, 255));
 		rdbtnMoradoJ1.addActionListener(new ActionListener() {
+			//Si el morado para J1 ha sido seleccionado
 			public void actionPerformed(ActionEvent e) {
 				if (rdbtnMoradoJ1.isSelected()) {
-					//Deshabilitar rojo para J2 y el resto de opciones para J1
+					//Deshabilitar morado para J2 y el resto de opciones para J1
 					rdbtnMoradoJ2.setSelected(false);
 					
 					rdbtnRojoJ1.setSelected(false);
@@ -128,9 +130,10 @@ public class IU_PersonalizarFichas extends JFrame {
 		rdbtnRojoJ2.setForeground(Color.RED);
 		rdbtnRojoJ2.setBackground(new Color(240, 248, 255));
 		rdbtnRojoJ2.addActionListener(new ActionListener() {
+			//Si el rojo para J2 ha sido seleccionado
 			public void actionPerformed(ActionEvent e) {
 				if (rdbtnRojoJ2.isSelected()) {
-					//Deshabilitar rojo para J2 y el resto de opciones para J1
+					//Deshabilitar rojo para J1 y el resto de opciones para J2
 					rdbtnRojoJ1.setSelected(false);
 					
 					rdbtnAzulJ2.setSelected(false);
@@ -147,9 +150,10 @@ public class IU_PersonalizarFichas extends JFrame {
 		rdbtnAzulJ2.setForeground(Color.BLUE);
 		rdbtnAzulJ2.setBackground(new Color(240, 248, 255));
 		rdbtnAzulJ2.addActionListener(new ActionListener() {
+			//Si el rojo azul J2 ha sido seleccionado
 			public void actionPerformed(ActionEvent e) {
 				if (rdbtnAzulJ2.isSelected()) {
-					//Deshabilitar rojo para J2 y el resto de opciones para J1
+					//Deshabilitar azul para J1 y el resto de opciones para J2
 					rdbtnAzulJ1.setSelected(false);
 					
 					rdbtnRojoJ2.setSelected(false);
@@ -166,9 +170,10 @@ public class IU_PersonalizarFichas extends JFrame {
 		rdbtnMoradoJ2.setForeground(Color.MAGENTA);
 		rdbtnMoradoJ2.setBackground(new Color(240, 248, 255));
 		rdbtnMoradoJ2.addActionListener(new ActionListener() {
+			//Si el morado para J2 ha sido seleccionado
 			public void actionPerformed(ActionEvent e) {
 				if (rdbtnMoradoJ2.isSelected()) {
-					//Deshabilitar rojo para J2 y el resto de opciones para J1
+					//Deshabilitar morado para J1 y el resto de opciones para J2
 					rdbtnMoradoJ1.setSelected(false);
 					
 					rdbtnRojoJ2.setSelected(false);
@@ -185,8 +190,7 @@ public class IU_PersonalizarFichas extends JFrame {
 		btnVolver.setBackground(SystemColor.control);
 		btnVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//IU_menu1 atras = new IU_menu1();
-				//atras.setVisible(true);
+
 				
 				if (fijaColores()) {
 					setVisible(false);
@@ -265,31 +269,5 @@ public class IU_PersonalizarFichas extends JFrame {
 		return true;
 	}
 	
-	public String seleccionJ1() {
-		String color1;
-		if (rdbtnRojoJ1.isSelected() ) {
-			color1 = "rojo.png";
-		}else if(rdbtnAzulJ1.isSelected()) {
-			color1 = "azul.png";
-		}else if(rdbtnMoradoJ2.isSelected()){
-			color1 = "morado.png";
-		}else {
-			color1 = "rojo.png";
-		}
-		return color1;
-	}
-	
-	public String seleccionJ2() {
-		String color2;
-		if (rdbtnRojoJ2.isSelected()) {
-			color2 = "rojo.png";
-		}else if(rdbtnAzulJ2.isSelected()) {
-			color2 = "azul.png";
-		}else if(rdbtnMoradoJ2.isSelected()){
-			color2 = "morado.png";
-		}else {
-			color2 = "azul.png";
-		}
-		return color2;
-	}
+
 }

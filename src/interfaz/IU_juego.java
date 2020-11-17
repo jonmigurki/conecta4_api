@@ -259,7 +259,6 @@ public class IU_juego extends JFrame implements Observer{
 											
 											if(j.getNum()==1){
 												
-												//Color del nombre del jugador
 												if(colores.colorJ2 =="rojo.png") {
 													lblJugador.setForeground(Color.RED);
 												}if(colores.colorJ2 =="azul.png") {
@@ -276,7 +275,6 @@ public class IU_juego extends JFrame implements Observer{
 												
 												
 											}else{
-												//Color del nombre del jugador
 												if(colores.colorJ1 =="rojo.png") {
 													lblJugador.setForeground(Color.RED);
 												}if(colores.colorJ1 =="azul.png") {
@@ -353,7 +351,6 @@ public class IU_juego extends JFrame implements Observer{
 		
 											ImageIcon color = null;
 											
-											//Color del nombre del jugador
 											if(colores.colorJ1 =="rojo.png") {
 												lblJugador.setForeground(Color.RED);
 											}if(colores.colorJ1 =="azul.png") {
@@ -598,7 +595,6 @@ public class IU_juego extends JFrame implements Observer{
 		return panel;
 	}
 	
-	//CAMBIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 	public void setColores(ColorFichas color) {
 		colores = color;
 	}

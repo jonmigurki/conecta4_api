@@ -99,7 +99,7 @@ public class IU_menu1 extends JFrame {
 		musica.playMusica2();
 		
 		
-		//Incializamos los colores por si el usuario no quiere personalizar
+		//Inicializamos los colores por si el usuario no quiere personalizar
 		colores.colorJ1 = "rojo.png";
 		colores.colorJ2 = "azul.png";
 		
@@ -266,7 +266,6 @@ public class IU_menu1 extends JFrame {
 			panel_1.add(getLblJugar());
 			
 			
-			//BOTON PERSONALIZAAAAAAAAARRRRRRRRRRRRRRRR
 			btnPersonalizar = new JButton("Personalizar fichas");
 			btnPersonalizar.setFont(new Font("Tahoma", Font.BOLD, 14));
 			btnPersonalizar.setBackground(Color.WHITE);
@@ -347,7 +346,6 @@ public class IU_menu1 extends JFrame {
 					}else if(rdbtnModoFacil.isSelected()){
 						IU_1jugador interfaz = new IU_1jugador();
 						
-						//cambio
 						interfaz.ponerColores(colores);
 						
 						interfaz.ponerDificultad("FACIL");
@@ -358,7 +356,6 @@ public class IU_menu1 extends JFrame {
 					}else if(rdbtnModoDificil.isSelected()){
 						IU_1jugador interfaz = new IU_1jugador();
 						
-						//cambio
 						interfaz.ponerColores(colores);
 						
 						interfaz.ponerDificultad("DIFICIL");

@@ -76,7 +76,6 @@ public class IU_1jugador extends JFrame {
 	}
 	
 	
-	//CAMBIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 	public void ponerColores(ColorFichas color) {
 		colores = color;
 	}
@@ -151,7 +150,6 @@ public class IU_1jugador extends JFrame {
 					IU_juego juego = new IU_juego();
 					juego.setModo(level);
 					
-					//colorrrrrrr
 					juego.setColores(colores);
 
 					setVisible(false);

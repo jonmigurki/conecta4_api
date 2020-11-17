@@ -137,14 +137,11 @@ public class IU_2jugadores extends JDialog {
 						IU_juego juego = new IU_juego();
 						juego.setModo("USUARIO");
 						
-						//FICHAAAAAAAAAS
 						juego.setColores(colores);
 						
-
 						setVisible(false);
 						juego.setVisible(true);
-						
-						
+												
 					}
 				});
 				okButton.setActionCommand("OK");
@@ -165,7 +162,6 @@ public class IU_2jugadores extends JDialog {
 		}
 	}
 	
-	//CAMBIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 	public void ponerColores(ColorFichas color) {
 		colores = color;
 	}
