@@ -89,7 +89,7 @@ public class IU_ayuda extends JFrame {
 	private JLabel getLblInstrucciones1() {
 		if (lblInstrucciones1 == null) {
 			if (Conecta4.getConecta4().getIdioma().equals("Castellano")) {
-				lblInstrucciones1 = new JLabel("<html>El Conecta4 es un juego en el que 2 jugadores tratan de hacer una l√≠nea con 4 fichas antes que el rival en una matriz 6*9.<html>");
+				lblInstrucciones1 = new JLabel("<html>El Conecta4 es un juego en el que 2 jugadores tratan de hacer una lÌnea con 4 fichas antes que el rival en una matriz 6*9.<html>");
 			}
 			else {
 				if (Conecta4.getConecta4().getIdioma().equals("Euskera")) {
@@ -108,7 +108,7 @@ public class IU_ayuda extends JFrame {
 	private JLabel getLblInstrucciones2() {
 		if (lblInstrucciones2 == null) {
 			if (Conecta4.getConecta4().getIdioma().equals("Castellano")) {
-				lblInstrucciones2 = new JLabel("<html>Para poder meter una ficha en el tablero, deber√°s seleccionar una columna, y autom√°ticamente se bajar√° la ficha a la posici√≥n que le corresponda, siempre encima de la √∫ltima ficha metida en esa columna.<html>");
+				lblInstrucciones2 = new JLabel("<html>Para poder meter una ficha en el tablero, deber·s seleccionar una columna, y autom·ticamente se bajar· la ficha a la posiciÛn que le corresponda, siempre encima de la ˙ltima ficha metida en esa columna.<html>");
 			}
 			else {
 				if (Conecta4.getConecta4().getIdioma().equals("Euskera")) {
@@ -127,7 +127,7 @@ public class IU_ayuda extends JFrame {
 	private JLabel getLblInstrucciones3() {
 		if (lblInstrucciones3 == null) {
 			if (Conecta4.getConecta4().getIdioma().equals("Castellano")) {
-				lblInstrucciones3 = new JLabel("<html>En el juego se podr√° jugar en modo 2 jugadores y un jugador. Cuando un jugador quiera jugar solo, podr√° seleccionar el nivel de dificultad.<html>");
+				lblInstrucciones3 = new JLabel("<html>En el juego se podr· jugar en modo 2 jugadores y un jugador. Cuando un jugador quiera jugar solo, podr· seleccionar el nivel de dificultad.<html>");
 			}
 			else {
 				if (Conecta4.getConecta4().getIdioma().equals("Euskera")) {
@@ -145,7 +145,15 @@ public class IU_ayuda extends JFrame {
 	}
 	private JButton getRdbtnAtras() {
 		if (rdbtnAtras == null) {
-			rdbtnAtras = new JButton("< Atr√°s");
+			rdbtnAtras = new JButton("< Atr·s");
+			if (Conecta4.getConecta4().getIdioma().equals("Euskera")) {
+				rdbtnAtras.setText("< Atzera");
+			}
+			else {
+				if (Conecta4.getConecta4().getIdioma().equals("English")) {
+					rdbtnAtras.setText("< Back");
+				}
+			}
 			rdbtnAtras.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					setVisible(false);

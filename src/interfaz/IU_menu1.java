@@ -53,6 +53,7 @@ public class IU_menu1 extends JFrame {
 	private JLabel lblDebesSeleccionarUn;
 	private JLabel lblFondo;
 	private JLabel lblJugar;
+	private JButton btnPersonalizar;
 	private static Musica musica;
 	
 	
@@ -175,6 +176,7 @@ public class IU_menu1 extends JFrame {
 					rdbtnModoDificil.setText("Player vs Hard AI");
 					lblDebesSeleccionarUn.setText("You must choose a game mode");
 					lblJugar.setText("PLAY");
+					btnPersonalizar.setText("Customize pieces");
 				}
 			});
 		}
@@ -201,6 +203,7 @@ public class IU_menu1 extends JFrame {
 					rdbtnModoDificil.setText("Jokalaria VS Ordenagailu azkarra");
 					lblDebesSeleccionarUn.setText("Joko modu bat aukeratu behar duzu");
 					lblJugar.setText("JOKATU");
+					btnPersonalizar.setText("Kolorea aukeratu");
 				}
 			});
 		}
@@ -227,6 +230,7 @@ public class IU_menu1 extends JFrame {
 					rdbtnModoDificil.setText("Jugador VS Ordenador listo");
 					lblDebesSeleccionarUn.setText("Debes seleccionar un modo de juego");
 					lblJugar.setText("JUGAR");
+					btnPersonalizar.setText("Personalizar fichas");
 				}
 			});
 		}
@@ -263,7 +267,7 @@ public class IU_menu1 extends JFrame {
 			
 			
 			//BOTON PERSONALIZAAAAAAAAARRRRRRRRRRRRRRRR
-			JButton btnPersonalizar = new JButton("Personalizar fichas");
+			btnPersonalizar = new JButton("Personalizar fichas");
 			btnPersonalizar.setFont(new Font("Tahoma", Font.BOLD, 14));
 			btnPersonalizar.setBackground(Color.WHITE);
 			btnPersonalizar.setForeground(Color.MAGENTA);

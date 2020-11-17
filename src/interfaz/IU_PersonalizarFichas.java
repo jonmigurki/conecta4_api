@@ -4,10 +4,12 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import codigo.ColorFichas;
+import codigo.Conecta4;
 
 import javax.swing.JTextPane;
 import javax.swing.JRadioButton;
@@ -210,6 +212,33 @@ public class IU_PersonalizarFichas extends JFrame {
 		});
 		btnVolver.setBounds(370, 254, 89, 23);
 		contentPane.add(btnVolver);
+		
+		//Idioma
+		if (Conecta4.getConecta4().getIdioma().equals("Euskera")) {
+			txtpnquColorQuieres.setText("Aukeratu kolorea 1:");
+			rdbtnRojoJ1.setText("Gorria");
+			rdbtnAzulJ1.setText("Urdina");
+			rdbtnMoradoJ1.setText("Morea");
+			txtpnquColorQuieres_1.setText("Aukeratu kolorea 2:");
+			rdbtnRojoJ2.setText("Gorria");
+			rdbtnAzulJ2.setText("Urdina");
+			rdbtnMoradoJ2.setText("Morea");
+			btnVolver.setText("Itzuli");
+		}
+		else {
+			if (Conecta4.getConecta4().getIdioma().equals("English")) {
+				txtpnquColorQuieres.setText("Select a colour for Player 1:");
+				rdbtnRojoJ1.setText("Red");
+				rdbtnAzulJ1.setText("Blue");
+				rdbtnMoradoJ1.setText("Purple");
+				txtpnquColorQuieres_1.setText("Select a colour for Player 2:");
+				rdbtnRojoJ2.setText("Red");
+				rdbtnAzulJ2.setText("Blue");
+				rdbtnMoradoJ2.setText("Purple");
+				btnVolver.setText("Back");
+			}
+		}
+		
 	}
 	
 	private boolean fijaColores() {
