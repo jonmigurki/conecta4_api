@@ -177,6 +177,7 @@ public class IU_menu1 extends JFrame {
 					rdbtnModoFacil.setText("Player vs Easy AI");
 					rdbtnModoDificil.setText("Player vs Hard AI");
 					lblDebesSeleccionarUn.setText("You must choose a game mode");
+					lblJugar.setText("PLAY");
 				}
 			});
 		}
@@ -202,6 +203,7 @@ public class IU_menu1 extends JFrame {
 					rdbtnModoFacil.setText("Jokalaria VS Ordenagailu tentela");
 					rdbtnModoDificil.setText("Jokalaria VS Ordenagailu azkarra");
 					lblDebesSeleccionarUn.setText("Joko modu bat aukeratu behar duzu");
+					lblJugar.setText("JOKATU");
 				}
 			});
 		}
@@ -227,6 +229,7 @@ public class IU_menu1 extends JFrame {
 					rdbtnModoFacil.setText("Jugador VS Ordenador tonto");
 					rdbtnModoDificil.setText("Jugador VS Ordenador listo");
 					lblDebesSeleccionarUn.setText("Debes seleccionar un modo de juego");
+					lblJugar.setText("JUGAR");
 				}
 			});
 		}
