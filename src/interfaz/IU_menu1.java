@@ -46,7 +46,7 @@ public class IU_menu1 extends JFrame {
 	private JLabel lblSeleccioneModoDe;
 	private JRadioButton rdbtn2Jugadores;
 	private JRadioButton rdbtnModoFacil;
-	private JRadioButton rdbtnModoDificil;
+	//private JRadioButton rdbtnModoDificil;
 	private JButton btnJugar;
 	private JButton btnAyuda;
 	private JLabel lblSeparador;
@@ -173,7 +173,7 @@ public class IU_menu1 extends JFrame {
 					lblSeleccioneModoDe.setText("Select a game mode:");
 					rdbtn2Jugadores.setText("Player vs Player");
 					rdbtnModoFacil.setText("Player vs Easy AI");
-					rdbtnModoDificil.setText("Player vs Hard AI");
+					//rdbtnModoDificil.setText("Player vs Hard AI");
 					lblDebesSeleccionarUn.setText("You must choose a game mode");
 					lblJugar.setText("PLAY");
 					btnPersonalizar.setText("Customize pieces");
@@ -200,7 +200,7 @@ public class IU_menu1 extends JFrame {
 					lblSeleccioneModoDe.setText("Joko modu bat aukeratu:");
 					rdbtn2Jugadores.setText("Jokalaria VS Jokalaria");
 					rdbtnModoFacil.setText("Jokalaria VS Ordenagailu tentela");
-					rdbtnModoDificil.setText("Jokalaria VS Ordenagailu azkarra");
+					//rdbtnModoDificil.setText("Jokalaria VS Ordenagailu azkarra");
 					lblDebesSeleccionarUn.setText("Joko modu bat aukeratu behar duzu");
 					lblJugar.setText("JOKATU");
 					btnPersonalizar.setText("Kolorea aukeratu");
@@ -227,7 +227,7 @@ public class IU_menu1 extends JFrame {
 					lblSeleccioneModoDe.setText("Seleccione modo de juego:");
 					rdbtn2Jugadores.setText("Jugador VS Jugador");
 					rdbtnModoFacil.setText("Jugador VS Ordenador tonto");
-					rdbtnModoDificil.setText("Jugador VS Ordenador listo");
+					//rdbtnModoDificil.setText("Jugador VS Ordenador listo");
 					lblDebesSeleccionarUn.setText("Debes seleccionar un modo de juego");
 					lblJugar.setText("JUGAR");
 					btnPersonalizar.setText("Personalizar fichas");
@@ -255,13 +255,13 @@ public class IU_menu1 extends JFrame {
 			panel_1.add(getLblSeleccioneModoDe());
 			panel_1.add(getRdbtn2Jugadores());
 			panel_1.add(getRdbtnModoFacil());
-			panel_1.add(getRdbtnModoDificil());
+			//panel_1.add(getRdbtnModoDificil());
 			panel_1.add(getBtnJugar());
 			
 			ButtonGroup btngroup1 = new ButtonGroup();
 			btngroup1.add(getRdbtn2Jugadores());
 			btngroup1.add(getRdbtnModoFacil());
-			btngroup1.add(getRdbtnModoDificil());
+			//btngroup1.add(getRdbtnModoDificil());
 			panel_1.add(getLblDebesSeleccionarUn());
 			panel_1.add(getLblJugar());
 			
@@ -273,7 +273,7 @@ public class IU_menu1 extends JFrame {
 			btnPersonalizar.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					
-					//Al hacer click en el botón, se abre la ventana de personalización
+					//Al hacer click en el botï¿½n, se abre la ventana de personalizaciï¿½n
 					IU_PersonalizarFichas pers = new IU_PersonalizarFichas(colores);
 					pers.setVisible(true);
 				}
@@ -314,7 +314,7 @@ public class IU_menu1 extends JFrame {
 		}
 		return rdbtnModoFacil;
 	}
-	private JRadioButton getRdbtnModoDificil() {
+/*	private JRadioButton getRdbtnModoDificil() {
 		if (rdbtnModoDificil == null) {
 			rdbtnModoDificil = new JRadioButton("Jugador VS Ordenador listo");
 			rdbtnModoDificil.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -323,7 +323,7 @@ public class IU_menu1 extends JFrame {
 			rdbtnModoDificil.setForeground(Color.BLACK);
 		}
 		return rdbtnModoDificil;
-	}
+	}*/
 	private JButton getBtnJugar() {
 		if (btnJugar == null) {
 			
@@ -353,7 +353,7 @@ public class IU_menu1 extends JFrame {
 						interfaz.setVisible(true);
 						
 						
-					}else if(rdbtnModoDificil.isSelected()){
+				/*	}else if(rdbtnModoDificil.isSelected()){
 						IU_1jugador interfaz = new IU_1jugador();
 						
 						interfaz.ponerColores(colores);
@@ -361,7 +361,7 @@ public class IU_menu1 extends JFrame {
 						interfaz.ponerDificultad("DIFICIL");
 						setVisible(false);
 						interfaz.setVisible(true);
-						
+						*/
 						
 					}else{
 						lblDebesSeleccionarUn.setForeground(SystemColor.RED);
